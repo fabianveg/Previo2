@@ -21,22 +21,22 @@ import co.banco.model.User;
  * Servlet implementation class UserServlet
  */
 @WebServlet("/UserServlet")
-public class Servlet extends HttpServlet {
+public class BillServlet extends HttpServlet {
 	
 	
 	private static final long serialVersionUID = 1L;
-    private UserDAO userDAO;
+
     private BillDAO billDAO;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet() {
+    public BillServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
     
     public void init(ServletConfig config) throws ServletException {
-		this.userDAO = new UserDAO();
+
 		this.billDAO = new BillDAO();
 		
 	}
@@ -88,7 +88,7 @@ public class Servlet extends HttpServlet {
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("BillForm.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("billForm.jsp");
 		dispatcher.forward(request, response);
 	}
 
